@@ -48,13 +48,19 @@ claude mcp add --transport http kids-stay https://mcp.kidsstay.workers.dev/mcp
 
 Then ask things like: *"Find hotels in Okinawa for a family with a 0-year-old — baby bed and baby food required."*
 
+**Local (stdio):** for MCP clients that prefer stdio, this repository ships a zero-dependency local build ([`index.js`](./index.js), Node.js 18+). Introspection is served locally from the bundled tool definitions; tool calls fetch live data from the hosted endpoint (the single source of truth):
+
+```bash
+npx github:sitebox/kids-stay-mcp        # or: git clone && node index.js
+```
+
 ## Data usage
 
 Use in AI responses **with attribution** (link to the facility page on kids-stay.com) is welcome. Bulk redistribution, resale, or building competing databases is prohibited. Facilities change their services — always confirm current conditions on the hotel page before booking. Full terms: https://kids-stay.com/mcp/ and https://kids-stay.com/terms/
 
 ## About this repository
 
-This repository is the public home of the server metadata ([`server.json`](./server.json)) for registry and directory listings. The server implementation and dataset are not open source — the data is the product of ongoing manual verification against official sources, refreshed monthly.
+This repository is the public home of the server metadata ([`server.json`](./server.json)) and a small local stdio build ([`index.js`](./index.js), MIT-licensed) for registry and directory listings. The hosted implementation and the dataset itself are not part of this repository — the data is the product of ongoing manual verification against official sources, refreshed monthly, and is served only through the endpoint.
 
 ---
 

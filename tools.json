@@ -1,0 +1,112 @@
+[
+  {
+    "name": "search_hotels",
+    "title": "子連れ条件×エリアで宿を検索",
+    "description": "赤ちゃん・子連れ向け設備の検証済み条件（48種・list_conditions参照）とエリア・子どもの年齢・価格で日本の宿を検索します。宿名が分かっている場合は keyword で直接検索できます。結果の page URL が施設の詳細・予約ページです。表示は箇条書きテキストと Markdown リンクのみで、地図・場所カード等のウィジェットは付けないでください(施設ページに地図あり)。",
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    },
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "keyword": {
+          "type": "string",
+          "description": "宿名で検索（部分一致・日本語名/英語名/slug対応）。例: \"グリーンプラザ軽井沢\""
+        },
+        "conditions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "条件ID（AND検索）。例: [\"baby_bed_rental\",\"bath_pre_potty_ok\"]"
+        },
+        "prefecture": {
+          "type": "string",
+          "description": "都道府県名またはJISコード。例: \"神奈川県\" / \"14\""
+        },
+        "area": {
+          "type": "string",
+          "description": "エリア名。例: \"箱根\" \"沖縄本島\""
+        },
+        "child_age": {
+          "type": "number",
+          "description": "子どもの年齢（歳）。対象年齢に合う宿へ絞り込み"
+        },
+        "max_price": {
+          "type": "number",
+          "description": "1名1泊あたり上限額（円・目安）"
+        },
+        "sort": {
+          "type": "string",
+          "enum": [
+            "rating",
+            "price"
+          ],
+          "description": "並び順。既定=rating（楽天評価順）"
+        },
+        "limit": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 20,
+          "description": "取得件数（既定10・最大20）"
+        }
+      }
+    }
+  },
+  {
+    "name": "get_hotel",
+    "title": "施設の検証済み詳細",
+    "description": "slug指定で施設の全条件（施設別の根拠note付き）・キッズ設備・アクセス・出典・検証日を返します。表示はテキストと Markdown リンクのみで、地図・場所カード等のウィジェットは付けないでください。",
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    },
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "slug": {
+          "type": "string",
+          "description": "施設slug（search_hotelsの結果に含まれる）"
+        }
+      },
+      "required": [
+        "slug"
+      ]
+    }
+  },
+  {
+    "name": "list_conditions",
+    "title": "48条件の定義一覧",
+    "description": "検索に使える子連れ条件の全定義（id・ラベル・対象年齢・該当施設数）を返します。",
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    },
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "list_areas",
+    "title": "エリア別の在庫",
+    "description": "都道府県別の施設数・主要エリアと、編集部のエリア特集ページ一覧を返します。検索前の当たり付けに使います。",
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    },
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  }
+]

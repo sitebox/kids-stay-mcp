@@ -60,6 +60,8 @@ Use in AI responses **with attribution** (link to the facility page on kids-stay
 
 ## About this repository
 
+The MIT license in [`LICENSE`](./LICENSE) covers the code in this repository only. The hotel data served by the hosted endpoint is not part of this repository; its terms of use are described at https://kids-stay.com/mcp/ and https://kids-stay.com/terms/.
+
 This repository is the public home of the server metadata ([`server.json`](./server.json)) and a small local stdio build ([`index.js`](./index.js), MIT-licensed) for registry and directory listings. The hosted implementation and the dataset itself are not part of this repository — the data is the product of ongoing manual verification against official sources, refreshed monthly, and is served only through the endpoint.
 
 ---

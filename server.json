@@ -2,8 +2,8 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.sitebox/kids-stay",
   "title": "Kids Stay",
-  "description": "Search Japanese hotels by 48 verified kid-friendly conditions, with sources and dates.",
-  "version": "1.0.1",
+  "description": "Search Japanese hotels by 53 verified kid-friendly conditions, with sources and dates.",
+  "version": "1.0.3",
   "websiteUrl": "https://kids-stay.com/mcp/",
   "icons": [
     {

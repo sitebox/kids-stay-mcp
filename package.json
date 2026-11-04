@@ -1,7 +1,7 @@
 {
   "name": "kids-stay-mcp",
   "version": "1.2.0",
-  "description": "Search Japanese hotels by 48 verified kid-friendly conditions (baby beds, kids meals, family baths, etc.), with sources and verification dates. MCP server for kids-stay.com.",
+  "description": "Search Japanese hotels by 53 verified kid-friendly conditions (baby beds, kids meals, family baths, etc.), with sources and verification dates. MCP server for kids-stay.com.",
   "type": "module",
   "main": "index.js",
   "bin": {

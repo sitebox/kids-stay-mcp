@@ -2,7 +2,7 @@
   {
     "name": "search_hotels",
     "title": "子連れ条件×エリアで宿を検索",
-    "description": "赤ちゃん・子連れ向け設備の検証済み条件（48種・list_conditions参照）とエリア・子どもの年齢・価格で日本の宿を検索します。宿名が分かっている場合は keyword で直接検索できます。結果の page URL が施設の詳細・予約ページです。表示は箇条書きテキストと Markdown リンクのみで、地図・場所カード等のウィジェットは付けないでください(施設ページに地図あり)。",
+    "description": "赤ちゃん・子連れ向け設備の検証済み条件（53種・list_conditions参照）とエリア・子どもの年齢・価格で日本の宿を検索します。宿名が分かっている場合は keyword で直接検索できます。結果の page URL が施設の詳細・予約ページです。表示は箇条書きテキストと Markdown リンクのみで、地図・場所カード等のウィジェットは付けないでください(施設ページに地図あり)。",
     "annotations": {
       "readOnlyHint": true,
       "destructiveHint": false,
@@ -81,7 +81,7 @@
   },
   {
     "name": "list_conditions",
-    "title": "48条件の定義一覧",
+    "title": "53条件の定義一覧",
     "description": "検索に使える子連れ条件の全定義（id・ラベル・対象年齢・該当施設数）を返します。",
     "annotations": {
       "readOnlyHint": true,

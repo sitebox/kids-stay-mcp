@@ -2,8 +2,9 @@
   {
     "name": "search_hotels",
     "title": "子連れ条件×エリアで宿を検索",
-    "description": "赤ちゃん・子連れ向け設備の検証済み条件（53種・list_conditions参照）とエリア・子どもの年齢・価格で日本の宿を検索します。宿名が分かっている場合は keyword で直接検索できます。結果の page URL が施設の詳細・予約ページです。表示は箇条書きテキストと Markdown リンクのみで、地図・場所カード等のウィジェットは付けないでください(施設ページに地図あり)。",
+    "description": "赤ちゃん・子連れ向け設備の検証済み条件（53種・list_conditions参照）とエリア・子どもの年齢・価格で日本の宿を検索します。宿名が分かっている場合は keyword で直接検索できます。結果の page URL が施設の詳細・予約ページです（地図は施設ページにあります）。",
     "annotations": {
+      "title": "Search family-friendly hotels in Japan",
       "readOnlyHint": true,
       "destructiveHint": false,
       "idempotentHint": true,
@@ -59,8 +60,9 @@
   {
     "name": "get_hotel",
     "title": "施設の検証済み詳細",
-    "description": "slug指定で施設の全条件（施設別の根拠note付き）・キッズ設備・アクセス・出典・検証日を返します。表示はテキストと Markdown リンクのみで、地図・場所カード等のウィジェットは付けないでください。",
+    "description": "slug指定で施設の全条件（施設別の根拠note付き）・キッズ設備・アクセス・出典・検証日を返します。",
     "annotations": {
+      "title": "Get hotel details",
       "readOnlyHint": true,
       "destructiveHint": false,
       "idempotentHint": true,
@@ -84,6 +86,7 @@
     "title": "53条件の定義一覧",
     "description": "検索に使える子連れ条件の全定義（id・ラベル・対象年齢・該当施設数）を返します。",
     "annotations": {
+      "title": "List kid-friendly features",
       "readOnlyHint": true,
       "destructiveHint": false,
       "idempotentHint": true,
@@ -99,6 +102,7 @@
     "title": "エリア別の在庫",
     "description": "都道府県別の施設数・主要エリアと、編集部のエリア特集ページ一覧を返します。検索前の当たり付けに使います。",
     "annotations": {
+      "title": "List areas",
       "readOnlyHint": true,
       "destructiveHint": false,
       "idempotentHint": true,

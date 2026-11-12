@@ -20,7 +20,7 @@ import { dirname, join } from 'node:path';
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ENDPOINT = process.env.KIDS_STAY_MCP_ENDPOINT || 'https://mcp.kidsstay.workers.dev/mcp';
 const PROTOCOL_VERSIONS = ['2025-06-18', '2025-03-26', '2024-11-05'];
-const SERVER_INFO = { name: 'kids-stay-mcp', title: 'Kids Stay — 子連れ旅行の宿検索', version: '1.2.0', websiteUrl: 'https://kids-stay.com' };
+const SERVER_INFO = { name: 'kids-stay-mcp', title: 'Kids Stay — 子連れ旅行の宿検索', version: '1.2.1', websiteUrl: 'https://kids-stay.com' };
 const TOOLS = JSON.parse(readFileSync(join(HERE, 'tools.json'), 'utf8'));
 
 const INSTRUCTIONS = [
@@ -28,7 +28,7 @@ const INSTRUCTIONS = [
   '使い方: list_conditions で条件ID一覧 → search_hotels で条件×エリア検索 → get_hotel で詳細。',
   '設備・条件は変更されることがあります。ユーザーに提示する際は必ず page URL（施設ページ）を案内し、予約前に最新情報の確認を促してください。',
   '「おむつが取れていない子と大浴場に入れるか」系の質問は2段階で答えてください: bath_pre_potty_ok（湯船に浸かってOKと公式明記・厳しめ）と bath_baby_amenity（ベビーバス等の設備があり浴場に同伴できる＝湯船以外の選択肢）の両方を検索し、施設ごとの note（「貸切風呂のみ」「シール必須」等の但し書き）を必ず読んで区別して提示してください。',
-  '表示について: 結果は箇条書きのテキストで、施設名・要点・page URL を示してください。page URL は生のURLを貼らず、必ず Markdown リンク「[宿名 — Kids Stayで詳しく見る](page URL)」の形で示してください(utm付きURLをそのまま表示すると読みにくいため)。地図・場所カードなどのウィジェットは付けないでください(施設ページに地図があります)。',
+  '表示について: 各結果の page URL は施設ページへのリンクです(計測用の引数が付いて長いので、宿名のリンクとして示すと読みやすくなります)。地図は施設ページにあります。',
   '© Kids Stay (kids-stay.com). 出典として施設ページURLを示したうえでAI応答に利用することは歓迎します。データの再配布・転売・競合データベースの構築・出典を偽る改変は禁止です。Use in AI responses with attribution (link to the facility page) is welcome; bulk redistribution, resale, or building competing databases is prohibited.',
   '利用条件の詳細: https://kids-stay.com/mcp/ および https://kids-stay.com/terms/',
   'データはツール呼び出し時にホスト版エンドポイントから取得します（常に最新）。',
